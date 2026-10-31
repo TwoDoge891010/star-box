@@ -1,0 +1,189 @@
+/* 星盒屋 · 界面层：货架、盲盒、拆盒台 */
+.shelf-head{text-align:center;margin-bottom:14px}
+.shelf-title{
+  font-size:clamp(22px,5.4vw,30px);font-weight:900;letter-spacing:.02em;
+  text-shadow:3px 3px 0 #07060F;
+}
+.shelf-sub{margin-top:6px;font-size:12px;color:rgba(255,248,231,.62)}
+
+.shelf-grid{
+  width:min(560px,92vw);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,2.6vw,18px);
+}
+.slot-box{
+  position:relative;aspect-ratio:.84;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.03);
+  border:2px dashed rgba(255,248,231,.14);
+  border-radius:14px;
+  transition:transform .22s var(--ease-pop),background .2s;
+}
+.slot-box.full{cursor:pointer;border:0;background:none}
+.slot-box.full:active{transform:scale(.96)}
+.slot-box.empty::after{
+  content:"补货中";font-size:11px;letter-spacing:.16em;color:rgba(255,248,231,.28);
+}
+.slot-box.selected{transform:scale(1.06)}
+.box{
+  position:relative;width:86%;height:86%;
+  filter:drop-shadow(6px 8px 0 rgba(0,0,0,.45));
+  animation:bob 3.2s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -4px}}
+.slot-box:nth-child(2) .box{animation-delay:.3s}
+.slot-box:nth-child(3) .box{animation-delay:.6s}
+.slot-box:nth-child(4) .box{animation-delay:.15s}
+.slot-box:nth-child(5) .box{animation-delay:.45s}
+.slot-box:nth-child(6) .box{animation-delay:.75s}
+.bx-body{
+  position:absolute;left:4%;right:4%;top:22%;bottom:2%;
+  background:linear-gradient(160deg,#EFE4FF,#C6B0EA 58%,#9C82C6);
+  border:3px solid #07060F;border-radius:10px;
+  box-shadow:inset -8px -9px 0 rgba(0,0,0,.14);
+  overflow:hidden;
+}
+.bx-body::after{
+  content:"?";position:absolute;inset:0;display:grid;place-items:center;
+  font-size:clamp(24px,7vw,38px);font-weight:900;color:#4A3568;opacity:.85;
+}
+.bx-lid{
+  position:absolute;left:0;right:0;top:2%;height:26%;
+  background:linear-gradient(160deg,#FFFDF6,#E6D8FF);
+  border:3px solid #07060F;border-radius:9px 9px 5px 5px;
+  z-index:2;
+}
+.bx-seal{
+  position:absolute;left:50%;top:18%;translate:-50% 0;
+  width:34%;height:20%;
+  background:repeating-linear-gradient(45deg,var(--pink) 0 5px,#E23B87 5px 10px);
+  border:2px solid #07060F;border-radius:3px;
+  z-index:3;
+  box-shadow:0 0 0 2px rgba(255,255,255,.16);
+}
+.bx-ribbon{
+  position:absolute;left:50%;top:24%;bottom:2%;translate:-50% 0;
+  width:12%;background:rgba(214,255,63,.9);border:2px solid #07060F;z-index:1;
+}
+.slot-box.selected .bx-stamp{
+  position:absolute;z-index:4;right:-6%;bottom:6%;
+  background:var(--lime);color:#0B0A14;
+  font-size:10px;font-weight:900;letter-spacing:.1em;
+  padding:4px 9px;border:3px solid #07060F;border-radius:4px;
+  transform:rotate(-9deg);
+  animation:stampIn .3s var(--ease-pop) both;
+}
+@keyframes stampIn{from{transform:rotate(-9deg) scale(2.2);opacity:0}to{transform:rotate(-9deg) scale(1);opacity:1}}
+.shelf-foot{
+  width:min(560px,92vw);margin-top:18px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.btn-ghost{
+  padding:9px 14px;border-radius:10px;
+  background:rgba(255,248,231,.06);
+  border:2px solid rgba(255,248,231,.18);
+  font-size:12px;font-weight:700;color:rgba(255,248,231,.8);
+}
+.btn-ghost:active{transform:scale(.95)}
+.shelf-counter{font-size:11px;letter-spacing:.14em;color:rgba(255,248,231,.45)}
+
+/* ---------- 拆盒台 ---------- */
+.open-head{height:22px;display:grid;place-items:center}
+.open-step{font-size:11px;letter-spacing:.2em;color:var(--cyan);font-weight:800}
+.open-stage{
+  position:relative;flex:1;
+  width:100%;display:grid;place-items:center;
+  min-height:260px;
+}
+.open-box{
+  position:relative;
+  width:min(210px,52vw);aspect-ratio:.86;
+  animation:openIn .5s var(--ease-pop) both;
+  touch-action:none;
+}
+@keyframes openIn{from{transform:scale(.7) translateY(24px);opacity:0}to{transform:none;opacity:1}}
+.open-box.shaking{animation:shakeBox .12s linear infinite}
+@keyframes shakeBox{
+  0%{transform:rotate(-2.4deg) translateX(-3px)}
+  50%{transform:rotate(2.4deg) translateX(3px)}
+  100%{transform:rotate(-2.4deg) translateX(-3px)}
+}
+.ob-body{
+  position:absolute;inset:16% 3% 2% 3%;
+  background:linear-gradient(160deg,#F1E6FF,#C4ADEA 58%,#9680C0);
+  border:4px solid #07060F;border-radius:14px;
+  box-shadow:inset -10px -12px 0 rgba(0,0,0,.14), 0 10px 0 rgba(0,0,0,.35);
+  overflow:hidden;
+}
+.ob-print{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-size:64px;font-weight:900;color:#4A3568;opacity:.8;
+}
+.ob-jelly{
+  position:absolute;inset:0;
+  background:radial-gradient(60% 50% at 50% 40%,rgba(255,255,255,.5),transparent 70%);
+  opacity:0;transition:opacity .3s;
+}
+.ob-lid{
+  position:absolute;left:0;right:0;top:0;height:22%;
+  transform-origin:50% 100%;
+  transition:transform .55s var(--ease-out);
+  z-index:3;
+}
+.ob-lid-face{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,#FFFDF6,#E8DAFF);
+  border:4px solid #07060F;border-radius:12px 12px 6px 6px;
+  display:grid;place-items:center;
+  box-shadow:inset 0 -6px 0 rgba(0,0,0,.08);
+}
+.ob-lid-face span{font-size:22px;color:var(--pink)}
+.ob-lid.open{transform:rotateX(-118deg) translateY(-12px)}
+.ob-seal{
+  position:absolute;left:50%;top:11%;translate:-50% 0;
+  width:46%;height:15%;
+  background:repeating-linear-gradient(45deg,var(--pink) 0 6px,#E23B87 6px 12px);
+  border:3px solid #07060F;border-radius:5px;
+  z-index:4;
+  display:grid;place-items:center;
+  font-size:11px;font-weight:900;color:#fff;letter-spacing:.08em;
+  text-shadow:1px 1px 0 rgba(0,0,0,.6);
+  touch-action:none;
+  box-shadow:0 0 0 3px rgba(255,255,255,.14);
+  transition:opacity .2s,transform .2s;
+}
+.ob-seal.torn{opacity:0;transform:translateY(26px) rotate(12deg)}
+.ob-glow{
+  position:absolute;left:50%;top:40%;translate:-50% -50%;
+  width:80%;height:80%;border-radius:50%;
+  background:radial-gradient(circle,rgba(214,255,63,.85),rgba(53,242,224,.28) 45%,transparent 70%);
+  opacity:0;pointer-events:none;filter:blur(6px);
+  transition:opacity .35s;
+}
+.ob-glow.on{opacity:1;animation:glowPulse 1.4s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{transform:translate(-50%,-50%) scale(.9)}50%{transform:translate(-50%,-50%) scale(1.08)}}
+.shake-ring{
+  position:absolute;left:50%;bottom:12%;translate:-50% 0;
+  width:60px;height:60px;border-radius:50%;
+  background:conic-gradient(var(--lime) var(--p,0deg), rgba(255,255,255,.10) 0);
+  display:grid;place-items:center;
+  opacity:0;transition:opacity .2s;
+}
+.shake-ring.on{opacity:1}
+.shake-ring::before{
+  content:"";position:absolute;inset:5px;border-radius:50%;
+  background:#0D0B18;border:2px solid #07060F;
+}
+.shake-ring span{position:relative;font-size:9px;font-weight:900;letter-spacing:.06em;color:var(--lime)}
+.open-hint{
+  min-height:34px;text-align:center;font-size:13px;font-weight:700;
+  color:rgba(255,248,231,.78);letter-spacing:.03em;
+}
+.open-hint b{color:var(--lime)}
+
+/* 封条撕拉指示 */
+.tear-tip{
+  position:absolute;left:50%;top:-26px;translate:-50% 0;
+  font-size:11px;color:var(--pink);font-weight:800;letter-spacing:.08em;
+  animation:tipBob 1.2s ease-in-out infinite;
+}
+@keyframes tipBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-4px)}}

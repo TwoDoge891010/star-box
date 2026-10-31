@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>星盒屋 STAR BOX</title>
+<link rel="stylesheet" href="parts/base.css">
+<link rel="stylesheet" href="parts/ui.css">
+<link rel="stylesheet" href="parts/ui2.css">
+</head>
+<body data-skin="default">
+
+<script>window.IMG_DATA = /*__IMG_DATA__*/null;</script>
+
+<div class="fx-dots" aria-hidden="true"></div>
+<div class="fx-scan" aria-hidden="true"></div>
+<canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+<header class="hud">
+  <button class="hud-logo" id="btn-home" aria-label="回到首页">
+    <span class="logo-mark">✦</span><span class="logo-text">STAR BOX</span>
+  </button>
+  <div class="hud-right">
+    <div class="stat stat-coin" id="stat-coin" title="星星币">
+      <span class="stat-ico">◉</span><b id="coin-num">3</b>
+    </div>
+    <div class="stat stat-dust" id="stat-dust" title="星尘">
+      <span class="stat-ico">✦</span><b id="dust-num">0</b>
+    </div>
+    <button class="hud-btn" id="btn-album">
+      <span>图鉴</span><b id="album-num">0/32</b>
+    </button>
+  </div>
+</header>
+
+<main id="stage">
+
+  <!-- 首页 -->
+  <section class="view is-active" id="view-home">
+    <div class="brand">
+      <div class="brand-kicker">✦ 星 盒 屋 ✦</div>
+      <h1 class="brand-title">STAR<span class="brand-box">BOX</span></h1>
+      <p class="brand-sub">投一枚星星币，拆一颗小星星</p>
+    </div>
+
+    <div class="machine" id="machine">
+      <div class="machine-head">
+        <i class="bulb"></i><i class="bulb"></i><i class="bulb"></i>
+        <span class="machine-name">今日新鲜</span>
+        <i class="bulb"></i><i class="bulb"></i><i class="bulb"></i>
+      </div>
+      <div class="machine-glass">
+        <div class="glass-boxes" id="glass-boxes"></div>
+        <div class="glass-shine"></div>
+        <div class="glass-tag">HOT!</div>
+      </div>
+      <div class="machine-foot">
+        <div class="slot" id="coin-slot" aria-hidden="true"><span>投币口</span></div>
+        <div class="tray"><div class="tray-slot"></div></div>
+      </div>
+      <div class="machine-led" id="machine-led">READY</div>
+    </div>
+
+    <div class="home-actions">
+      <button class="btn-main" id="btn-play">
+        <span class="btn-main-ico">◉</span>
+        <span class="btn-main-text" id="play-text">投币开盒</span>
+        <span class="btn-main-sub" id="play-sub">星星币 ×3</span>
+      </button>
+      <p class="home-tip" id="home-tip">投一枚星星币，就能拆一个盒子</p>
+    </div>
+
+    <div class="home-foot">
+      <span class="home-pity" id="home-pity"></span>
+    </div>
+
+    <button class="gear" id="btn-gear" aria-label="家长台">⚙</button>
+  </section>
+
+  <!-- 货架 -->
+  <section class="view" id="view-shelf">
+    <div class="shelf-head">
+      <h2 class="shelf-title">挑一个盒子</h2>
+      <p class="shelf-sub" id="shelf-sub">先摇一摇，听听里面有什么</p>
+    </div>
+    <div class="shelf-grid" id="shelf-grid"></div>
+    <div class="shelf-foot">
+      <button class="btn-ghost" id="btn-shelf-back">← 回到机器</button>
+      <div class="shelf-counter" id="shelf-counter">货架 6 / 6</div>
+    </div>
+  </section>
+
+  <!-- 拆盒 -->
+  <section class="view" id="view-open">
+    <div class="open-head">
+      <span class="open-step" id="open-step">第 1 步 / 摇一摇</span>
+    </div>
+    <div class="open-stage">
+      <div class="open-box" id="open-box">
+        <div class="ob-glow" id="ob-glow"></div>
+        <div class="ob-body">
+          <div class="ob-print"><span>?</span></div>
+          <div class="ob-jelly" id="ob-jelly"></div>
+        </div>
+        <div class="ob-lid" id="ob-lid">
+          <div class="ob-lid-face"><span>✦</span></div>
+        </div>
+        <div class="ob-seal" id="ob-seal"><span>撕开封条</span></div>
+      </div>
+      <div class="shake-ring" id="shake-ring"><span id="shake-ring-text">按住</span></div>
+    </div>
+    <p class="open-hint" id="open-hint">按住盒子，摇三下</p>
+  </section>
+
+  <!-- 图鉴 -->
+  <section class="view" id="view-album">
+    <div class="album-head">
+      <h2 class="shelf-title">我的图鉴</h2>
+      <div class="album-progress"><b id="album-total">0</b> / 32</div>
+    </div>
+    <div class="album-tabs" id="album-tabs"></div>
+    <div class="album-series">
+      <div class="series-bar"><span id="series-name">云朵朋友</span><b id="series-count">0 / 8</b></div>
+      <div class="series-track"><i id="series-fill"></i></div>
+    </div>
+    <div class="album-grid" id="album-grid"></div>
+    <div class="album-foot">
+      <div class="pity-card" id="pity-card"></div>
+      <button class="btn-shop" id="btn-shop">✦ 星尘兑换</button>
+    </div>
+  </section>
+
+  <!-- 家长台 -->
+  <section class="view" id="view-parent">
+    <div class="parent-head">
+      <h2 class="shelf-title">家长台</h2>
+      <button class="btn-ghost" id="btn-parent-back">← 返回</button>
+    </div>
+    <div class="parent-grid">
+      <div class="p-card">
+        <h3>奖池与货架</h3>
+        <p class="p-desc">补满货架不会影响图鉴和星尘。</p>
+        <button class="btn-line" id="btn-restock">补满货架</button>
+      </div>
+      <div class="p-card">
+        <h3>每日星星币</h3>
+        <p class="p-desc">每天自动发放，1–9 枚。</p>
+        <div class="stepper">
+          <button data-step="-1">−</button>
+          <b id="daily-num">3</b>
+          <button data-step="1">＋</button>
+        </div>
+        <button class="btn-line" id="btn-reward">奖励 1 枚</button>
+      </div>
+      <div class="p-card">
+        <h3>愿望券</h3>
+        <p class="p-desc">抽到小确幸券 / 大愿望券时可兑现。点一下盖章。</p>
+        <ul class="wish-list" id="wish-list"></ul>
+      </div>
+      <div class="p-card">
+        <h3>安静模式</h3>
+        <p class="p-desc">关闭粒子与震屏，演出更短，适合睡前。</p>
+        <button class="btn-line" id="btn-quiet">未开启</button>
+      </div>
+      <div class="p-card p-danger">
+        <h3>重开一局</h3>
+        <p class="p-desc">清空图鉴、星尘、保底进度。长按 3 秒后输入密码。</p>
+        <button class="btn-danger" id="btn-reset">长按 3 秒重开</button>
+      </div>
+      <div class="p-card p-danger">
+        <h3>恢复默认设置</h3>
+        <p class="p-desc">只还原次数、券内容、皮肤与安静模式。</p>
+        <button class="btn-danger" id="btn-defaults">长按 3 秒恢复</button>
+      </div>
+    </div>
+    <p class="parent-note">家长台不在孩子的主流程里，入口是首页右下角的小齿轮（双击打开）。</p>
+  </section>
+
+</main>
+
+<div id="reveal" class="reveal" aria-live="polite"></div>
+<div id="toast" class="toast"></div>
+<div id="modal" class="modal"></div>
+
+<script src="js/00-data.js"></script>
+<script src="js/10-audio.js"></script>
+<script src="js/20-fx.js"></script>
+<script src="js/30-core.js"></script>
+<script src="js/35-open.js"></script>
+<script src="js/40-album.js"></script>
+<script src="js/50-parent.js"></script>
+<script src="js/90-boot.js"></script>
+</body>
+</html>

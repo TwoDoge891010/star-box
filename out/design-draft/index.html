@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>星盒屋 STAR BOX · 设计稿 v0.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="tex-grain" aria-hidden="true"></div>
+<div class="tex-scan" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="brand" href="#top">
+    <span class="brand-star">★</span>
+    <span class="brand-en">STAR BOX</span>
+    <span class="brand-cn">星盒屋</span>
+  </a>
+  <nav class="nav">
+    <a href="#loop"><i>01</i>循环</a>
+    <a href="#dna"><i>02</i>视觉</a>
+    <a href="#system"><i>03</i>系统</a>
+    <a href="#screens"><i>04</i>界面</a>
+    <a href="#cards"><i>05</i>卡面</a>
+    <a href="#reveal"><i>06</i>开箱</a>
+    <a href="#motion"><i>07</i>动效</a>
+    <a href="#collection"><i>08</i>收集</a>
+    <a href="#parent"><i>09</i>家长台</a>
+    <a href="#deliver"><i>10</i>计划</a>
+  </nav>
+  <span class="topbar-meta">DRAFT v0.1</span>
+</header>
+
+<main>
+
+<!-- ═════════ COVER ═════════ -->
+<section id="top" class="cover">
+  <div class="cover-grid">
+    <div class="cover-left">
+      <p class="cover-kicker">LUCKY BOX · FOR A 6-YEAR-OLD</p>
+      <h1 class="cover-title">
+        <span class="ct-en">STAR</span>
+        <span class="ct-en ct-en-2">BOX</span>
+        <span class="ct-cn">星盒屋</span>
+      </h1>
+      <p class="cover-lead">街角有台老电视改装的盲盒机。<br>投一枚星星币，拆开一颗会发光的星宠。</p>
+      <div class="cover-tags">
+        <span class="stick-tag">4 档稀有度</span>
+        <span class="stick-tag">32 张图鉴</span>
+        <span class="stick-tag">家长可补货 / 重置</span>
+      </div>
+      <div class="cover-meta">
+        <span>设计稿 v0.1</span><span>2026.10.31</span><span>1440 × 900</span>
+      </div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-art">
+        <img src="assets/mascot.jpg" alt="星盒屋吉祥物：荧光星星兽">
+        <span class="sticker sticker-a">HI!</span>
+        <span class="sticker sticker-b">OPEN<br>ME</span>
+      </div>
+      <div class="cover-art-shadow"></div>
+    </div>
+  </div>
+  <div class="cover-scroll"><span>SCROLL</span><i></i></div>
+</section>
+
+<!-- ═════════ TICKER ═════════ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>★ 拆开一颗星星</span><span>◆ 收进你的口袋</span><span>★ STAR BOX</span>
+    <span>◆ 传说级 2%</span><span>★ 没有空盒</span><span>◆ 每天三次</span>
+    <span>★ 拆开一颗星星</span><span>◆ 收进你的口袋</span><span>★ STAR BOX</span>
+    <span>◆ 传说级 2%</span><span>★ 没有空盒</span><span>◆ 每天三次</span>
+  </div>
+</div>
+
+<!-- ═════════ 01 LOOP ═════════ -->
+<section id="loop" class="sec">
+  <div class="sec-head">
+    <span class="sec-no">01</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">游玩循环</h2>
+      <p class="sec-sub">15 秒一次，坐下玩三次，一整周都有期待</p>
+    </div>
+    <span class="sec-tag">CORE LOOP</span>
+  </div>
+
+  <ol class="loop">
+    <li class="loop-step">
+      <span class="loop-no">1</span>
+      <div class="loop-ico" data-ico="shelf"></div>
+      <h3>看货架</h3>
+      <p>六个盒子在等你，每个都不一样。</p>
+    </li>
+    <li class="loop-step">
+      <span class="loop-no">2</span>
+      <div class="loop-ico" data-ico="pick"></div>
+      <h3>选一盒</h3>
+      <p>点一下，盖上「就要它」的章。</p>
+    </li>
+    <li class="loop-step">
+      <span class="loop-no">3</span>
+      <div class="loop-ico" data-ico="shake"></div>
+      <h3>摇一摇</h3>
+      <p>长按摇三下，里面咔哒咔哒响。</p>
+    </li>
+    <li class="loop-step">
+      <span class="loop-no">4</span>
+      <div class="loop-ico" data-ico="peel"></div>
+      <h3>撕封条</h3>
+      <p>往下拖，纸屑会飞出来。</p>
+    </li>
+    <li class="loop-step">
+      <span class="loop-no">5</span>
+      <div class="loop-ico" data-ico="open"></div>
+      <h3>开盖</h3>
+      <p>光从缝里冲出来，别眨眼。</p>
+    </li>
+    <li class="loop-step">
+      <span class="loop-no">6</span>
+      <div class="loop-ico" data-ico="book"></div>
+      <h3>收进图鉴</h3>
+      <p>卡片自己飞进册子，进度 +1。</p>
+    </li>
+  </ol>
+
+  <div class="rules">
+    <div class="rule-card">
+      <span class="rule-no">A</span>
+      <h4>3 秒看懂</h4>
+      <p>一屏只回答一个问题：现在能做什么。没有二级菜单，没有红点。</p>
+    </div>
+    <div class="rule-card">
+      <span class="rule-no">B</span>
+      <h4>每次都有回应</h4>
+      <p>点任何东西都要有声音、抖动或闪光。六岁的手也需要被听见。</p>
+    </div>
+    <div class="rule-card">
+      <span class="rule-no">C</span>
+      <h4>失败不惩罚</h4>
+      <p>没有空盒、没有扣分、没有「明天再来」的冷脸。最差也有一颗星尘。</p>
+    </div>
+    <div class="rule-card">
+      <span class="rule-no">D</span>
+      <h4>屏幕外能兑现</h4>
+      <p>稀有条件会变成真实约定：多讲一个故事、一起去公园。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 02 DNA ═════════ -->
+<section id="dna" class="sec sec-dark">
+  <div class="sec-head">
+    <span class="sec-no">02</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">视觉基因</h2>
+      <p class="sec-sub">借《绝区零》的街头海报骨架，把「躁」调成「俏」</p>
+    </div>
+    <span class="sec-tag">ART DNA</span>
+  </div>
+
+  <div class="formula">
+    <span class="formula-frag">街头涂鸦海报</span><i>×</i>
+    <span class="formula-frag">CRT 电视屏幕</span><i>×</i>
+    <span class="formula-frag">贴纸白边</span><i>×</i>
+    <span class="formula-frag">霓虹三色</span><i>+</i>
+    <span class="formula-frag formula-frag-accent">圆角软化</span>
+  </div>
+
+  <div class="dna-grid">
+    <div class="dna-col">
+      <h3 class="dna-h"><span>KEEP</span>保留的骨架</h3>
+      <ul class="dna-list">
+        <li><b>粗黑描边 + 白边贴纸</b><span>所有角色、盒子、按钮都像从海报上撕下来的贴纸。</span></li>
+        <li><b>斜切与错位</b><span>标题 -6° 倾斜，色块故意错开 2px，制造印刷套色失误感。</span></li>
+        <li><b>半调网点</b><span>阴影和渐变用圆点堆出来，不用柔和模糊。</span></li>
+        <li><b>深色底 + 高饱和霓虹</b><span>暗场让荧光色像灯箱一样发亮。</span></li>
+        <li><b>大字号 + 印章</b><span>章节号、稀有度、按钮全部当海报标题处理。</span></li>
+        <li><b>CRT 扫描线</b><span>屏幕质感，压到几乎看不见，只留一层味道。</span></li>
+      </ul>
+    </div>
+    <div class="dna-arrow" aria-hidden="true">→</div>
+    <div class="dna-col">
+      <h3 class="dna-h dna-h-alt"><span>SOFTEN</span>为六岁做的软化</h3>
+      <ul class="dna-list dna-list-alt">
+        <li><b>去掉频闪</b><span>故障感只用静态噪点与错位，不做高频闪烁，保护视力。</span></li>
+        <li><b>圆角加一档</b><span>卡片 18px、按钮 999px，硬朗但不扎手。</span></li>
+        <li><b>信息只留两层</b><span>原标题、原按钮、原数字，其余全删。</span></li>
+        <li><b>颜色糖果化</b><span>霓虹里加奶白，避免灰脏；金色只给传说。</span></li>
+        <li><b>字体换圆</b><span>正文用圆体，标题才用压缩黑体。</span></li>
+        <li><b>动作有落点</b><span>每个动效结束都停在清晰状态，不留悬空。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tex-row">
+    <div class="tex-card tex-halftone"><span>HALFTONE 网点</span></div>
+    <div class="tex-card tex-scan2"><span>SCANLINE 扫描线</span></div>
+    <div class="tex-card tex-sticker"><span>STICKER 贴纸白边</span></div>
+    <div class="tex-card tex-tape"><span>TAPE 胶带</span></div>
+  </div>
+</section>
+
+<!-- ═════════ 03 SYSTEM ═════════ -->
+<section id="system" class="sec">
+  <div class="sec-head">
+    <span class="sec-no">03</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">设计系统</h2>
+      <p class="sec-sub">八色、三档字、五种贴纸组件，够用就好</p>
+    </div>
+    <span class="sec-tag">TOKENS</span>
+  </div>
+
+  <div class="palette">
+    <div class="sw" style="--c:#0B0A14"><b>#0B0A14</b><span>INK 底</span></div>
+    <div class="sw" style="--c:#14121F"><b>#14121F</b><span>PANEL 面板</span></div>
+    <div class="sw" style="--c:#D6FF3F"><b>#D6FF3F</b><span>LIME 主色</span></div>
+    <div class="sw" style="--c:#35F2E0"><b>#35F2E0</b><span>CYAN 稀有</span></div>
+    <div class="sw" style="--c:#A855F7"><b>#A855F7</b><span>PURPLE 史诗</span></div>
+    <div class="sw" style="--c:#FF4D9D"><b>#FF4D9D</b><span>PINK 点缀</span></div>
+    <div class="sw" style="--c:#FFC93C"><b>#FFC93C</b><span>GOLD 传说专用</span></div>
+    <div class="sw" style="--c:#FFF8E7"><b>#FFF8E7</b><span>PAPER 文字</span></div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-block">
+      <span class="label">DISPLAY / 120</span>
+      <div class="type-demo t1">拆一盒</div>
+    </div>
+    <div class="type-block">
+      <span class="label">TITLE / 44</span>
+      <div class="type-demo t2">今天还有 3 次</div>
+    </div>
+    <div class="type-block">
+      <span class="label">BODY / 16</span>
+      <div class="type-demo t3">挑一个你最喜欢的盒子，摇三下再打开。</div>
+    </div>
+    <div class="type-block">
+      <span class="label">MONO / 12</span>
+      <div class="type-demo t4">SSR · LEGENDARY · 002%</div>
+    </div>
+  </div>
+
+  <div class="comp-row">
+    <div class="comp">
+      <span class="label">BUTTON</span>
+      <button class="btn">开一盒 <i>→</i></button>
+      <button class="btn btn-ghost">我的图鉴</button>
+    </div>
+    <div class="comp">
+      <span class="label">TAG / STAMP</span>
+      <div class="comp-inline">
+        <span class="tag">新品</span>
+        <span class="tag tag-cyan">稀有</span>
+        <span class="stamp">已收录</span>
+      </div>
+    </div>
+    <div class="comp">
+      <span class="label">PROGRESS</span>
+      <div class="bar"><i style="width:62%"></i><b>5 / 8</b></div>
+      <div class="pity">再拆 <b>2</b> 次，电波级一定会来</div>
+    </div>
+    <div class="comp">
+      <span class="label">CARD FRAME</span>
+      <div class="mini-frame">
+        <img src="assets/pet-rare.jpg" alt="">
+        <span class="mini-frame-no">NO.011</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 04 SCREENS ═════════ -->
+<section id="screens" class="sec sec-dark">
+  <div class="sec-head">
+    <span class="sec-no">04</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">界面设计</h2>
+      <p class="sec-sub">四屏走完一次完整体验，第五屏给家长</p>
+    </div>
+    <span class="sec-tag">UI</span>
+  </div>
+
+  <!-- HOME -->
+  <figure class="screen-wrap">
+    <figcaption class="screen-cap">
+      <span class="cap-no">01</span>
+      <div><h3>首页 · 盲盒机</h3><p>一眼看到「还能玩几次」，其余全部让位给机器。</p></div>
+      <span class="cap-meta">HOME / 1440×810</span>
+    </figcaption>
+    <div class="screen">
+      <div class="screen-bar"><i></i><i></i><i></i><span>starbox.local</span><em>×</em></div>
+      <div class="sb sb-home">
+        <div class="home-machine">
+          <div class="machine">
+            <div class="machine-head">
+              <div class="tv">
+                <div class="tv-screen"><img src="assets/mascot.jpg" alt=""></div>
+                <div class="tv-vent"><i></i><i></i><i></i><i></i></div>
+              </div>
+              <div class="machine-plate">
+                <span>STAR<br>BOX</span>
+                <em>24H</em>
+              </div>
+            </div>
+            <div class="machine-window">
+              <div class="mini-box"><img src="assets/blindbox.jpg" alt=""></div>
+              <div class="mini-box mini-box-b"><img src="assets/blindbox.jpg" alt=""></div>
+              <div class="mini-box mini-box-c"><img src="assets/blindbox.jpg" alt=""></div>
+            </div>
+            <div class="machine-base">
+              <span class="machine-slot"></span>
+              <span class="machine-cap">PUSH</span>
+            </div>
+          </div>
+          <div class="machine-shadow"></div>
+        </div>
+
+        <div class="home-panel">
+          <div class="home-stats">
+            <span class="chip"><b>1,240</b> 星尘</span>
+            <span class="chip"><b>12</b>/32 图鉴</span>
+          </div>
+          <p class="eyebrow">TODAY · 10.31 · 星期五</p>
+          <h3 class="home-h">今天还有<br><em>3</em> 次</h3>
+          <button class="btn btn-xl">开一盒 <i>→</i></button>
+          <div class="home-row">
+            <button class="btn btn-ghost">我的图鉴</button>
+            <button class="btn btn-ghost">星星商店</button>
+          </div>
+          <div class="home-note">
+            <span class="dot-live"></span> 本机今日还剩 <b>1</b> 个传说名额
+          </div>
+          <button class="gear" title="家长台">⚙</button>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- SELECT -->
+  <figure class="screen-wrap">
+    <figcaption class="screen-cap">
+      <span class="cap-no">02</span>
+      <div><h3>选盒 · 货架</h3><p>盒子会呼吸，选中盖一枚斜章，不让小孩选择困难。</p></div>
+      <span class="cap-meta">SELECT / 1440×810</span>
+    </figcaption>
+    <div class="screen">
+      <div class="screen-bar"><i></i><i></i><i></i><span>starbox.local / select</span><em>×</em></div>
+      <div class="sb sb-select">
+        <div class="select-head">
+          <span class="label">STEP 01 / 04</span>
+          <h3>挑一个你最喜欢的</h3>
+          <p>它们看起来一样，其实不一样。</p>
+        </div>
+        <div class="shelf">
+          <div class="shelf-box"><img src="assets/blindbox.jpg" alt=""><span class="shelf-no">01</span></div>
+          <div class="shelf-box is-picked"><img src="assets/blindbox.jpg" alt=""><span class="shelf-no">02</span><span class="pick-stamp">就要它</span></div>
+          <div class="shelf-box"><img src="assets/blindbox.jpg" alt=""><span class="shelf-no">03</span></div>
+          <div class="shelf-box"><img src="assets/blindbox.jpg" alt=""><span class="shelf-no">04</span></div>
+          <div class="shelf-box"><img src="assets/blindbox.jpg" alt=""><span class="shelf-no">05</span></div>
+          <div class="shelf-box"><img src="assets/blindbox.jpg" alt=""><span class="shelf-no">06</span></div>
+        </div>
+        <div class="select-foot">
+          <span class="select-hint">长按盒子可以摇一摇</span>
+          <button class="btn">下一步 <i>→</i></button>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- REVEAL -->
+  <figure class="screen-wrap">
+    <figcaption class="screen-cap">
+      <span class="cap-no">03</span>
+      <div><h3>开箱 · 传说级</h3><p>压暗、光柱、印章、金雨，最后卡片自己飞进图鉴。</p></div>
+      <span class="cap-meta">REVEAL / SSR</span>
+    </figcaption>
+    <div class="screen">
+      <div class="screen-bar"><i></i><i></i><i></i><span>starbox.local / reveal</span><em>×</em></div>
+      <div class="sb sb-reveal">
+        <div class="reveal-beam"></div>
+        <div class="reveal-rays"></div>
+        <div class="reveal-particles"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="reveal-card">
+          <div class="rc-top"><span>NO.032</span><span>SSR</span></div>
+          <div class="rc-art"><img src="assets/pet-legend.jpg" alt=""></div>
+          <div class="rc-foot">
+            <h4>金冠星龙</h4>
+            <p>喜欢把星星藏在耳朵里。</p>
+          </div>
+        </div>
+        <div class="reveal-burst">LEGENDARY</div>
+        <div class="reveal-copy">
+          <span class="label">NEW · 已自动收入图鉴</span>
+          <h3>你拆到了传说</h3>
+          <div class="reveal-acts">
+            <button class="btn btn-gold">收下它</button>
+            <button class="btn btn-ghost">看看图鉴</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- COLLECTION -->
+  <figure class="screen-wrap">
+    <figcaption class="screen-cap">
+      <span class="cap-no">04</span>
+      <div><h3>图鉴 · 收藏册</h3><p>空位是剪影加问号；集齐一个系列，解锁一款新盒子。</p></div>
+      <span class="cap-meta">COLLECTION</span>
+    </figcaption>
+    <div class="screen">
+      <div class="screen-bar"><i></i><i></i><i></i><span>starbox.local / collection</span><em>×</em></div>
+      <div class="sb sb-collection">
+        <div class="col-head">
+          <div>
+            <span class="label">MY COLLECTION</span>
+            <h3>图鉴 <em>12</em>/32</h3>
+          </div>
+          <div class="col-stardust"><b>1,240</b><span>星尘</span></div>
+        </div>
+        <div class="col-tabs">
+          <span class="col-tab is-on">云朵朋友 5/8</span>
+          <span class="col-tab">街角小怪兽 3/8</span>
+          <span class="col-tab">电波乐队 4/8</span>
+          <span class="col-tab">星冠家族 0/8</span>
+        </div>
+        <div class="col-body">
+          <div class="col-grid">
+            <div class="slot"><img src="assets/pet-common.jpg" alt=""><span>NO.001</span></div>
+            <div class="slot"><img src="assets/pet-rare.jpg" alt=""><span>NO.011</span></div>
+            <div class="slot"><img src="assets/pet-epic.jpg" alt=""><span>NO.021</span></div>
+            <div class="slot"><img src="assets/pet-legend.jpg" alt=""><span>NO.032</span></div>
+            <div class="slot slot-empty"><b>?</b><span>NO.005</span></div>
+            <div class="slot slot-empty"><b>?</b><span>NO.006</span></div>
+            <div class="slot slot-empty"><b>?</b><span>NO.007</span></div>
+            <div class="slot slot-empty"><b>?</b><span>NO.008</span></div>
+          </div>
+          <aside class="col-side">
+            <div class="side-card">
+              <span class="label">PITY 保底</span>
+              <div class="bar bar-thin"><i style="width:70%"></i><b>3 / 5</b></div>
+              <p>再拆 2 次，电波级一定会来。</p>
+            </div>
+            <div class="side-card">
+              <span class="label">SHOP 星尘商店</span>
+              <div class="shop-row"><img src="assets/pet-rare.jpg" alt=""><span>荧光兔</span><b>120</b></div>
+              <div class="shop-row"><img src="assets/pet-epic.jpg" alt=""><span>耳机史莱姆</span><b>320</b></div>
+              <p class="side-note">传说不可兑换，只能自己拆到。</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </figure>
+</section>
+
+<!-- ═════════ 05 CARDS ═════════ -->
+<section id="cards" class="sec">
+  <div class="sec-head">
+    <span class="sec-no">05</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">四档卡面</h2>
+      <p class="sec-sub">靠颜色、边框、印刷工艺区分，不靠小字</p>
+    </div>
+    <span class="sec-tag">RARITY</span>
+  </div>
+
+  <div class="cards">
+    <article class="pcard pcard-n">
+      <div class="pcard-art"><img src="assets/pet-common.jpg" alt=""></div>
+      <div class="pcard-meta"><span class="pcard-tier">N · 云朵</span><span class="pcard-pct">60%</span></div>
+      <h4>云朵兽</h4>
+      <p>总在打瞌睡，飘得比走得快。</p>
+      <ul class="pcard-facts"><li>星尘 ×5</li><li>基础贴纸</li><li>哑光纸</li></ul>
+    </article>
+
+    <article class="pcard pcard-r">
+      <div class="pcard-art"><img src="assets/pet-rare.jpg" alt=""></div>
+      <div class="pcard-meta"><span class="pcard-tier">R · 荧光</span><span class="pcard-pct">28%</span></div>
+      <h4>荧光兔</h4>
+      <p>耳朵会发光，飞起来像小灯泡。</p>
+      <ul class="pcard-facts"><li>图鉴卡</li><li>边缘描边</li><li>珠光膜</li></ul>
+    </article>
+
+    <article class="pcard pcard-sr">
+      <div class="pcard-art"><img src="assets/pet-epic.jpg" alt=""></div>
+      <div class="pcard-meta"><span class="pcard-tier">SR · 电波</span><span class="pcard-pct">10%</span></div>
+      <h4>耳机史莱姆</h4>
+      <p>走路自带 BGM，脾气很好。</p>
+      <ul class="pcard-facts"><li>全息闪卡</li><li>小确幸券</li><li>烫紫边</li></ul>
+    </article>
+
+    <article class="pcard pcard-ssr">
+      <div class="pcard-art"><img src="assets/pet-legend.jpg" alt=""></div>
+      <div class="pcard-meta"><span class="pcard-tier">SSR · 传说</span><span class="pcard-pct">2%</span></div>
+      <h4>金冠星龙</h4>
+      <p>喜欢把星星藏在耳朵里。</p>
+      <ul class="pcard-facts"><li>皇冠浮雕</li><li>大愿望券</li><li>金箔压印</li></ul>
+    </article>
+  </div>
+
+  <div class="pity-note">
+    <b>温柔保底</b>
+    <span>连续 5 次没出电波 → 第 6 次必出；连续 15 次没出传说 → 第 16 次必出。进度直接写在图鉴上，等待也看得见。</span>
+  </div>
+</section>
+
+<!-- ═════════ 06 REVEAL SEQ ═════════ -->
+<section id="reveal" class="sec sec-dark">
+  <div class="sec-head">
+    <span class="sec-no">06</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">开箱演出的四格</h2>
+      <p class="sec-sub">从「有点紧张」到「哇」，中间只隔两次心跳</p>
+    </div>
+    <span class="sec-tag">SEQUENCE</span>
+  </div>
+
+  <div class="seq">
+    <div class="seq-panel">
+      <span class="seq-tag">01 选盒</span>
+      <div class="seq-art seq-art-pick"><div class="seq-box"><img src="assets/blindbox.jpg" alt=""><span class="seq-stamp">PICK</span></div></div>
+      <p>六个盒子都在呼吸，选中的那个站起来。</p>
+      <span class="seq-time">0.0s</span>
+    </div>
+    <div class="seq-panel">
+      <span class="seq-tag">02 摇盒</span>
+      <div class="seq-art"><div class="seq-box seq-shake"><img src="assets/blindbox.jpg" alt=""></div><div class="seq-ring"></div></div>
+      <p>长按摇三下，里面咔哒咔哒，越摇越亮。</p>
+      <span class="seq-time">0.4s</span>
+    </div>
+    <div class="seq-panel">
+      <span class="seq-tag">03 撕封条</span>
+      <div class="seq-art"><div class="seq-box"><img src="assets/blindbox.jpg" alt=""><span class="seq-seal"></span></div><div class="seq-scraps"><i></i><i></i><i></i><i></i></div></div>
+      <p>封条被撕开，纸屑飞出来，盒子轻轻一弹。</p>
+      <span class="seq-time">1.2s</span>
+    </div>
+    <div class="seq-panel seq-panel-final">
+      <span class="seq-tag">04 揭晓</span>
+      <div class="seq-art"><div class="seq-beam"></div><div class="seq-burst">传说</div><div class="seq-card"><img src="assets/pet-legend.jpg" alt=""></div></div>
+      <p>压暗、心跳、光柱、印章砸下，然后整屏金雨。</p>
+      <span class="seq-time">2.6s</span>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-row"><span class="tl-time">0.0</span><div class="tl-bar"><i style="width:12%;margin-left:0"></i></div><span class="tl-txt">压暗 20%，只剩盒缝一线光</span></div>
+    <div class="tl-row"><span class="tl-time">0.3</span><div class="tl-bar"><i style="width:23%;margin-left:12%"></i></div><span class="tl-txt">心跳三下，光随鼓点胀缩</span></div>
+    <div class="tl-row"><span class="tl-time">0.9</span><div class="tl-bar"><i style="width:12%;margin-left:35%"></i></div><span class="tl-txt">光柱炸开，金色粒子喷出</span></div>
+    <div class="tl-row"><span class="tl-time">1.2</span><div class="tl-bar"><i style="width:15%;margin-left:47%"></i></div><span class="tl-txt">三帧漫画分格闪切</span></div>
+    <div class="tl-row"><span class="tl-time">1.6</span><div class="tl-bar"><i style="width:15%;margin-left:62%"></i></div><span class="tl-txt">皇冠印章砸下，震屏 6px</span></div>
+    <div class="tl-row"><span class="tl-time">2.0</span><div class="tl-bar"><i style="width:15%;margin-left:77%"></i></div><span class="tl-txt">卡片 360° 展示，全息反光扫过</span></div>
+    <div class="tl-row"><span class="tl-time">2.4</span><div class="tl-bar"><i style="width:8%;margin-left:92%"></i></div><span class="tl-txt">卡片飞入图鉴，进度 +1，金光收束</span></div>
+  </div>
+</section>
+
+<!-- ═════════ 07 MOTION ═════════ -->
+<section id="motion" class="sec">
+  <div class="sec-head">
+    <span class="sec-no">07</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">动效样机</h2>
+      <p class="sec-sub">按一下，走完整个开箱：摇 → 撕 → 开 → 传说</p>
+    </div>
+    <span class="sec-tag">LIVE DEMO</span>
+  </div>
+
+  <div class="demo">
+    <div class="demo-stage" id="demoStage">
+      <div class="demo-grid" aria-hidden="true"></div>
+      <div class="demo-beam" aria-hidden="true"></div>
+      <div class="demo-rays" aria-hidden="true"></div>
+      <div class="demo-box" id="demoBox">
+        <img src="assets/blindbox.jpg" alt="盲盒">
+        <span class="demo-seal" id="demoSeal"></span>
+      </div>
+      <div class="demo-card" id="demoCard">
+        <img src="assets/pet-legend.jpg" alt="金冠星龙">
+        <div class="demo-card-bar"><b>SSR</b><span>金冠星龙</span></div>
+      </div>
+      <div class="demo-burst" id="demoBurst">LUCKY!</div>
+      <div class="demo-flash" id="demoFlash"></div>
+      <div class="demo-particles" id="demoParticles"></div>
+      <div class="demo-hint" id="demoHint">按右边按钮开始</div>
+    </div>
+    <div class="demo-side">
+      <span class="label">PROTOTYPE</span>
+      <h3>拆一盒试试</h3>
+      <p>这段是设计稿里的动效样机，用 CSS + 原生 JS 做的，正式版会加音效与粒子物理。</p>
+      <button class="btn btn-xl" id="demoBtn">拆一盒 <i>→</i></button>
+      <div class="demo-log"><span class="dot-live"></span><em id="demoLog">准备就绪</em></div>
+      <div class="demo-specs">
+        <div><b>0.24s</b><span>UI 反馈</span></div>
+        <div><b>2.6s</b><span>传说仪式</span></div>
+        <div><b>≤120</b><span>粒子上限</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="motion-table">
+    <div class="mt-row mt-head"><span>动作</span><span>做法</span><span>时长 / 缓动</span></div>
+    <div class="mt-row"><span>盒子呼吸</span><span>上下 4px + 亮度 90→100%</span><span>3.2s · inOutSine 循环</span></div>
+    <div class="mt-row"><span>选中</span><span>放大 1.08 + 章落下 + 阴影变硬</span><span>240ms · back</span></div>
+    <div class="mt-row"><span>摇盒</span><span>±7° 抖动，粒子密度随次数增加</span><span>90ms × 3 · linear</span></div>
+    <div class="mt-row"><span>撕封条</span><span>clip-path 从上往下裁切 + 纸屑</span><span>500ms · outExpo</span></div>
+    <div class="mt-row"><span>开盖</span><span>盖子 rotateX(-110°) + 上抛</span><span>420ms · outBack</span></div>
+    <div class="mt-row"><span>印章</span><span>scale 3 → 1 + 旋转 -8° + 震屏</span><span>180ms · outExpo</span></div>
+    <div class="mt-row"><span>卡片入册</span><span>FLIP 位移动画飞向图鉴图标</span><span>600ms · inOutQuart</span></div>
+    <div class="mt-row"><span>安静模式</span><span>关粒子、关震屏，闪切改淡入</span><span>整体 ×0.6</span></div>
+  </div>
+</section>
+
+<!-- ═════════ 08 COLLECTION ═════════ -->
+<section id="collection" class="sec sec-dark">
+  <div class="sec-head">
+    <span class="sec-no">08</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">收集与重复</h2>
+      <p class="sec-sub">重复不是失败，是「又见面啦」</p>
+    </div>
+    <span class="sec-tag">COLLECT</span>
+  </div>
+
+  <div class="collect-grid">
+    <div class="collect-card">
+      <span class="cc-no">32</span>
+      <h3>四系列 × 八张</h3>
+      <p>云朵朋友、街角小怪兽、电波乐队、星冠家族。每张卡背面写一句性格，孩子能讲给同学听。</p>
+      <div class="cc-series">
+        <span>云朵朋友 5/8</span><span>街角小怪兽 3/8</span><span>电波乐队 4/8</span><span>星冠家族 0/8</span>
+      </div>
+    </div>
+
+    <div class="collect-card">
+      <span class="cc-no">×N</span>
+      <h3>重复转星尘</h3>
+      <p>重复卡自动变成星尘，并弹出「又见面啦」。对面会显示这次攒了多少，孩子能看到努力在累积。</p>
+      <div class="dust-row">
+        <span>N +5</span><span>R +15</span><span>SR +40</span><span>SSR +100</span>
+      </div>
+    </div>
+
+    <div class="collect-card">
+      <span class="cc-no">120</span>
+      <h3>星尘商店</h3>
+      <p>攒够星尘可以指名换一张没有的 R 或 SR。传说永远不卖，只能自己拆到，保住它的重量。</p>
+      <div class="shop-row"><img src="assets/pet-rare.jpg" alt=""><span>荧光兔</span><b>120</b></div>
+    </div>
+
+    <div class="collect-card">
+      <span class="cc-no">8/8</span>
+      <h3>集齐解锁皮肤</h3>
+      <p>集齐一个系列，整格盖 COMPLETE 章，并解锁一款盲盒皮肤：贴纸风、棋盘格、电视机、金箔。</p>
+      <div class="skin-row"><i class="skin sk-1"></i><i class="skin sk-2"></i><i class="skin sk-3"></i><i class="skin sk-4"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 09 PARENT ═════════ -->
+<section id="parent" class="sec">
+  <div class="sec-head">
+    <span class="sec-no">09</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">家长台</h2>
+      <p class="sec-sub">补货、重置、次数、愿望券，全部在这里改</p>
+    </div>
+    <span class="sec-tag">PARENT</span>
+  </div>
+
+  <div class="parent-wrap">
+    <div class="parent-panel">
+      <div class="pp-head">
+        <div><span class="label">PARENT CONSOLE</span><h3>今天的状态</h3></div>
+        <span class="pp-lock">长按进入 · 齿轮双击</span>
+      </div>
+
+      <div class="pp-pool">
+        <span class="label">奖池 POOL</span>
+        <div class="pool-row"><b>N</b><div class="pool-bar"><i style="width:100%"></i></div><em>60%</em></div>
+        <div class="pool-row"><b>R</b><div class="pool-bar pool-bar-r"><i style="width:46%"></i></div><em>28%</em></div>
+        <div class="pool-row"><b>SR</b><div class="pool-bar pool-bar-sr"><i style="width:16%"></i></div><em>10%</em></div>
+        <div class="pool-row"><b>SSR</b><div class="pool-bar pool-bar-ssr"><i style="width:6%"></i></div><em>2%</em></div>
+        <p class="pp-note">货架 6 格 · 本机还剩 <b>1</b> 个传说名额 · 保底计数 3/5</p>
+      </div>
+
+      <div class="pp-acts">
+        <button class="btn">一键补货</button>
+        <button class="btn btn-ghost">补满货架</button>
+        <button class="btn btn-ghost">改每日次数</button>
+      </div>
+
+      <div class="pp-danger">
+        <span class="label">RESET</span>
+        <div class="danger-row">
+          <div><b>重开一局</b><span>清空图鉴、星尘、保底计数</span></div>
+          <button class="btn-danger">长按 3 秒</button>
+        </div>
+        <div class="danger-row">
+          <div><b>恢复默认设置</b><span>次数、券内容、皮肤回到初始</span></div>
+          <button class="btn-danger">长按 3 秒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="parent-side">
+      <div class="ps-card">
+        <span class="label">WISHES 愿望券</span>
+        <div class="wish"><span>多听一个睡前故事</span><em>SR</em></div>
+        <div class="wish"><span>一起烤一次饼干</span><em>SR</em></div>
+        <div class="wish"><span>挑一部动画片看</span><em>SR</em></div>
+        <div class="wish"><span>去公园玩一小时</span><em>SSR</em></div>
+        <div class="wish"><span>一起做一次手工</span><em>SSR</em></div>
+        <button class="btn btn-ghost btn-sm">+ 添加一条</button>
+      </div>
+      <div class="ps-card ps-card-dark">
+        <span class="label">SAFETY 安全设计</span>
+        <ul class="ps-list">
+          <li>孩子端没有重置入口，齿轮双击才开</li>
+          <li>重置需长按 3 秒 + 4 位家长密码</li>
+          <li>无充值、无广告、无外链、无数据上传</li>
+          <li>安静模式一键关粒子与震屏</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 10 DELIVER ═════════ -->
+<section id="deliver" class="sec sec-dark">
+  <div class="sec-head">
+    <span class="sec-no">10</span>
+    <div class="sec-head-txt">
+      <h2 class="sec-title">接下来</h2>
+      <p class="sec-sub">设计稿确认后，按三步做成能玩的单页</p>
+    </div>
+    <span class="sec-tag">NEXT</span>
+  </div>
+
+  <div class="phase">
+    <div class="phase-item is-now"><span class="ph-no">01</span><h3>设计稿评审</h3><p>确认视觉方向、稀有度演出、家长台逻辑。改动只在这层，成本最低。</p><em>现在这里</em></div>
+    <div class="phase-item"><span class="ph-no">02</span><h3>可玩单页</h3><p>单文件 HTML：选盒、摇盒、开箱、图鉴、星尘商店、本地存档。</p><em>待开始</em></div>
+    <div class="phase-item"><span class="ph-no">03</span><h3>打磨与验收</h3><p>音效、粒子、iPad 触屏适配、女儿实测三轮，按她的反应改。</p><em>待开始</em></div>
+  </div>
+
+  <div class="decide">
+    <span class="label">需要你点头的三件事</span>
+    <div class="decide-grid">
+      <div><b>每天 3 次</b><p>还是改成「完成任务换次数」？</p></div>
+      <div><b>愿望券清单</b><p>默认 6 条贴近你们家的日常吗？</p></div>
+      <div><b>名字</b><p>暂定「星盒屋 STAR BOX」，可以换。</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span>星盒屋 STAR BOX · 设计稿 v0.1</span>
+  <span>2026.10.31 · 为 6 岁的小朋友做的</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
