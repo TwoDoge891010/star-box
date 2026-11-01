@@ -65,13 +65,20 @@
     return false;
   }
 
+  // 货架始终补满：孩子任何时刻进来都不会看到空格
+  function ensureFullShelf() {
+    var changed = false;
+    for (var i = 0; i < state.shelf.length; i++) {
+      if (!state.shelf[i]) { state.shelf[i] = 1; changed = true; }
+    }
+    if (changed) save();
+    return changed;
+  }
+
   // 每日首次进入补满货架 + 发币
   function bootDaily() {
     var changed = dailyCheck();
-    if (state.shelf.every(function (x) { return !x; })) {
-      state.shelf = [1, 1, 1, 1, 1, 1];
-      save();
-    }
+    ensureFullShelf();
     return changed;
   }
 
@@ -222,12 +229,7 @@
 
   // ---------- 货架 ----------
   function enterShelf() {
-    var filled = state.shelf.filter(Boolean).length;
-    if (filled === 0) {
-      state.shelf = [1, 1, 1, 1, 1, 1];
-      save();
-      toast('店员悄悄补满了货架');
-    }
+    ensureFullShelf();
     go('shelf');
     renderShelf();
     var sub = $('#shelf-sub');
@@ -343,6 +345,7 @@
   S.renderHome = renderHome;
   S.renderShelf = renderShelf;
   S.enterShelf = enterShelf;
+  S.ensureFullShelf = ensureFullShelf;
   S.play = play;
   S.rollTier = rollTier;
   S.pickCard = pickCard;

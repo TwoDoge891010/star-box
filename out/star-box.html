@@ -1079,7 +1079,7 @@ body.quiet .rev-inner .rev-info{animation-delay:.25s}
     <div class="parent-grid">
       <div class="p-card">
         <h3>奖池与货架</h3>
-        <p class="p-desc">补满货架不会影响图鉴和星尘。</p>
+        <p class="p-desc">货架每次打开都会自动补满，不会缺货；这里可手动整理，不影响图鉴和星尘。</p>
         <button class="btn-line" id="btn-restock">补满货架</button>
       </div>
       <div class="p-card">
@@ -1593,13 +1593,20 @@ body.quiet .rev-inner .rev-info{animation-delay:.25s}
     return false;
   }
 
+  // 货架始终补满：孩子任何时刻进来都不会看到空格
+  function ensureFullShelf() {
+    var changed = false;
+    for (var i = 0; i < state.shelf.length; i++) {
+      if (!state.shelf[i]) { state.shelf[i] = 1; changed = true; }
+    }
+    if (changed) save();
+    return changed;
+  }
+
   // 每日首次进入补满货架 + 发币
   function bootDaily() {
     var changed = dailyCheck();
-    if (state.shelf.every(function (x) { return !x; })) {
-      state.shelf = [1, 1, 1, 1, 1, 1];
-      save();
-    }
+    ensureFullShelf();
     return changed;
   }
 
@@ -1750,12 +1757,7 @@ body.quiet .rev-inner .rev-info{animation-delay:.25s}
 
   // ---------- 货架 ----------
   function enterShelf() {
-    var filled = state.shelf.filter(Boolean).length;
-    if (filled === 0) {
-      state.shelf = [1, 1, 1, 1, 1, 1];
-      save();
-      toast('店员悄悄补满了货架');
-    }
+    ensureFullShelf();
     go('shelf');
     renderShelf();
     var sub = $('#shelf-sub');
@@ -1871,6 +1873,7 @@ body.quiet .rev-inner .rev-info{animation-delay:.25s}
   S.renderHome = renderHome;
   S.renderShelf = renderShelf;
   S.enterShelf = enterShelf;
+  S.ensureFullShelf = ensureFullShelf;
   S.play = play;
   S.rollTier = rollTier;
   S.pickCard = pickCard;
